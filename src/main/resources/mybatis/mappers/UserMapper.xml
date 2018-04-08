@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="me.kipling.dao.UserDao">
+
+	<resultMap id="userResultMap" type="me.kipling.entity.User">
+		<id column="id" jdbcType="INTEGER" property="id" />
+		<result column="name" jdbcType="VARCHAR" property="name" />
+		<result column="password" jdbcType="VARCHAR" property="password" />
+		<result column="age" jdbcType="INTEGER" property="age" />
+	</resultMap>
+
+	<!--以下两条测试分页 -->
+	<select id="queryUserPageInfo" parameterType="string" resultMap="userResultMap">
+		SELECT * FROM tb_user where name like '%${param}%'
+	</select>
+
+	<select id="queryUserPageInfo1" parameterType="string"
+		resultMap="userResultMap">
+		SELECT * FROM tb_user where name like '%${_parameter}%'
+	</select>
+
+	<!-- 新增用户 -->
+	<insert id="insertOne" parameterType="me.kipling.entity.User"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into tb_user (id, name,
+		password,age)
+		values
+		(#{id}, #{name}, #{password},#{age})
+	</insert>
+
+	<!-- 查询单个用户 -->
+	<select id="findOne" parameterType="java.lang.Integer"
+		resultMap="userResultMap">
+		select * from tb_user where id = #{id}
+	</select>
+
+	<!-- 删除单个用户 -->
+	<delete id="deleteOne" parameterType="java.lang.Integer">
+		delete from tb_user where
+		id = #{id}
+	</delete>
+
+	<!-- 更新 -->
+	<update id="updateOne" parameterType="me.kipling.entity.User">
+		update tb_user
+		<set>
+			<if test="name != null">
+				name = #{name},
+			</if>
+			<if test="password != null">
+				password = #{password},
+			</if>
+			<if test="age != null">
+				age = #{age},
+			</if>
+		</set>
+		where id = #{id}
+	</update>
+</mapper>

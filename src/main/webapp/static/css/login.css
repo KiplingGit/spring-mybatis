@@ -1,0 +1,74 @@
+@charset "utf-8";
+/* CSS Document */
+/* login.html */
+.login_div{
+    width: 490px;
+    height: auto;
+    margin: 0 auto;
+}
+.login_title_div{
+    width: 100%;
+    height: auto;
+    padding-top: 25%;
+    overflow: hidden;
+    border-bottom: 1px solid #fff;
+}
+.login_conLeft_div{
+    float:left;
+    width: 40%;
+    height:auto;
+    border-right: 1px solid #fff;
+}
+.login_conRight_div{
+    float:left; width: 59%; height:auto;
+}
+.login_logo_p{
+    font-size: 18px;
+    color: #fff;
+    padding: 20px 0px;
+    text-align: center;
+}
+.login_welcome{
+    font-size: 16px;
+    color: #fff;
+    padding: 35px 0px 0px 20px;
+    text-align: left;
+}
+.login_con_div{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+.login_glImg{
+    width: 150px;
+    margin-right: 20px;
+}
+.login_input_div{
+    padding: 20px 0 0 20px;
+}
+.login_input_div div{
+    margin-top: 15px;
+}
+.login_input_div div input.login_inputText{
+    width: 140px;
+    padding: 2px 5px;
+    background-color: #ffffff;
+}
+.login_input_div p{
+    font-weight: normal;
+    margin: 0;
+    font-size: 14px;
+    color: #ffffff;
+    display: inline-block;
+    width: 60px;
+    text-align: right;
+}
+.login_input_div div input.login_inputButton{
+    margin: 0 5px;
+    border: 0;
+    border-radius: 2px;
+    background-color: #a6c1de;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 2px 20px;
+}
